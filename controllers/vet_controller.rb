@@ -9,6 +9,6 @@ get '/vets' do
 end
 
 get '/vets/:id' do
-  @vet = Vet.find(params['id'].to_i)
+  @vet = Vet.find_by_id(params['id'].to_i)
   erb(:"vets/show")
 end

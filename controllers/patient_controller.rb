@@ -9,6 +9,6 @@ get '/patients' do
 end
 
 get '/patients/:id' do
-  @patient = Patient.find(params['id'].to_i)
+  @patient = Patient.find_by_id(params['id'].to_i)
   erb(:"patients/show")
 end
