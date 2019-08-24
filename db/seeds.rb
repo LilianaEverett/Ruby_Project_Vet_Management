@@ -3,9 +3,15 @@ require_relative( "../models/vet.rb" )
 
 require("pry-byebug")
 
-Vet.delete_all()
 Patient.delete_all()
+Vet.delete_all()
 
+vet1 = Vet.new({
+  "first_name" => "Lindsay",
+  "last_name" => "Halcrow"
+})
+
+vet1.save()
 
 patient1 = Patient.new({
   "name" => "Romero",
@@ -17,3 +23,8 @@ patient1 = Patient.new({
 })
 
 patient1.save()
+
+
+
+binding.pry
+nil

@@ -13,7 +13,7 @@ class Patient
     @db = options['db']
     @owner_contact = options['owner_contact']
     @vet_id = options['vet_id'].to_i
-    @notes = options[notes]
+    @notes = options['notes']
 
   end
 

@@ -13,9 +13,9 @@ CREATE TABLE patients
 (
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
-  type VARCHAR(255),
+  type VARCHAR(255) NOT NULL,
   db VARCHAR(255),
   owner_contact VARCHAR(255) NOT NULL,
   vet_id INT4 REFERENCES vets(id),
-  notes TEXT
+  notes varchar
 );

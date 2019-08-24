@@ -1,0 +1,12 @@
+<p>Name: <%= @patient.name %></p>
+<p>Type: <%= @patient.type %></p>
+<p>Date of Birth: <%= @patient.db %></p>
+<p>Owner Contact: <%= @patient.owner_contact %></p>
+
+<p>Appointment Notes: <%= @patient.notes %></p>
+
+<p><a href="/patients/<%= @patient.id %>/edit">Edit</a></p>
+<form method="post" action="/patients/ <%= @patient.id %>/delete"
+>
+  <input type="submit" value="Delete">
+</form>
