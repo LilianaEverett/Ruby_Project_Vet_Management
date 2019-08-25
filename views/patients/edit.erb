@@ -1,0 +1,48 @@
+<h2>Edit <%= @patient.name %></h2>
+<form method="POST" action="/patients/<%= @patient.id %>">
+  <div class="form-wrapper">
+
+    <div class="form-el">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" value="<%= @patient.name %>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="type">Type:</label>
+      <input type="text" name="type" id="type" value="<%= @patient.type%>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="db">Type:</label>
+      <input type="text" name="db" id="db" value="<%= @patient.db%>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="owner_contact">Type:</label>
+      <input type="text" name="owner_contact" id="owner_contact" value="<%= @patient.owner_contact%>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="vet_select">Select Veterinarian:</label>
+      <select name="vet_select" id="vet_select" selected="<%= @patient.vet_id  %>">
+        <% @vets.each do |vet| %>
+          <% if vet.id == @patient.vet_id %>
+            <option value=<%= vet.id %> selected><%= vet.first_name %></option>
+          <% else %>
+            <option value=<%= vet.id %>><%= vet.first_name %></option>
+          <% end %>
+        <% end %>
+      </select>
+    </div>
+
+    <div class="form-el">
+      <label for="notes">Appointment Notes:</label>
+      <input type="text" name="notes" id="notes" value="<%= @patient.notes %>"/>
+    </div>
+
+    <div class="form-el">
+      <input type="submit" value="Save"/>
+    </div>
+
+  </div>
+</form>

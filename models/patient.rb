@@ -71,4 +71,23 @@ class Patient
   return Patient.new( results.first )
 end
 
+def update()
+    sql = "UPDATE patients
+    SET
+    (
+      name,
+      type,
+      db,
+      owner_contact,
+      vet_id,
+      notes
+    ) =
+    (
+      $1, $2, $3, $4, $5, $6
+    )
+    WHERE id = $7"
+    values = [@name, @type, @db, @owner_contact, @vet_id, @notes, @id]
+    SqlRunner.run(sql, values)
+  end
+
 end

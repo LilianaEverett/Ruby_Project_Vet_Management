@@ -25,3 +25,15 @@ get '/patients/:id' do
   @patient = Patient.find_by_id(params['id'].to_i)
   erb(:"patients/show")
 end
+
+get '/patients/:id/edit' do
+  @vets = Vet.all
+  @patient = Patient.find_by_id(params['id'])
+  erb(:"patients/edit")
+end
+
+post '/patients/:id' do
+  patient = Patient.new(params)
+  patient.update
+  redirect to "/patients/#{params['id']}"
+end
