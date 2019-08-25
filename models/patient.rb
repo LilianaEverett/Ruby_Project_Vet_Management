@@ -56,7 +56,7 @@ class Patient
     SqlRunner.run( sql )
   end
 
-  def self.delete(id)
+  def delete
     sql = "DELETE FROM patients
     WHERE id = $1"
     values = [id]

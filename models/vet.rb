@@ -53,7 +53,7 @@ class Vet
     SqlRunner.run( sql )
   end
 
-  def self.delete(id)
+  def delete
     sql = "DELETE FROM vets
     WHERE id = $1"
     values = [id]

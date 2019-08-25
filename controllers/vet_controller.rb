@@ -35,3 +35,9 @@ post '/vets/:id' do
   vet.update
   redirect to "/vets/#{params['id']}"
 end
+
+post '/vets/:id/delete' do
+  vet = Vet.find_by_id(params['id'])
+  vet.delete
+  redirect to '/vets'
+end

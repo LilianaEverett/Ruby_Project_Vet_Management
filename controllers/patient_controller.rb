@@ -37,3 +37,9 @@ post '/patients/:id' do
   patient.update
   redirect to "/patients/#{params['id']}"
 end
+
+post '/patients/:id/delete' do
+  patient = Patient.find_by_id(params['id'])
+  patient.delete
+  redirect to '/patients'
+end
