@@ -9,6 +9,7 @@ get '/patients' do
   erb ( :"patients/index" )
 end
 
+# new
 get '/patients/new' do
   @vets = Vet.all
   erb(:"patients/new")
@@ -22,6 +23,5 @@ end
 
 get '/patients/:id' do
   @patient = Patient.find_by_id(params['id'].to_i)
-  @vet = Vet.find_by_id(params['id'].to_i)
   erb(:"patients/show")
 end

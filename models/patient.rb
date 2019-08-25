@@ -48,7 +48,7 @@ class Patient
     WHERE id = $1"
     values = [@vet_id]
     results = SqlRunner.run( sql, values )
-    return self.new( results.first )
+    return Patient.new( results.first )
   end
 
   def self.delete_all()
@@ -68,7 +68,7 @@ class Patient
   WHERE id = $1"
   values = [id]
   results = SqlRunner.run( sql, values )
-  return self.new( results.first )
+  return Patient.new( results.first )
 end
 
 end
