@@ -30,7 +30,7 @@ class Vet
   def self.all()
     sql = "SELECT * FROM vets"
     results = SqlRunner.run( sql )
-    return results.map { |vet| self.new( vet ) }
+    return results.map { |vet| Vet.new( vet ) }
   end
 
   def self.delete_all()
@@ -51,6 +51,10 @@ class Vet
     values = [id]
     results = SqlRunner.run( sql, values )
     return self.new( results.first )
+  end
+
+  def format_name
+    return "#{@first_name.capitalize} #{@last_name.capitalize}"
   end
 
 end

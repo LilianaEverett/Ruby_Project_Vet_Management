@@ -2,7 +2,7 @@
 <p>Type: <%= @patient.type %></p>
 <p>Date of Birth: <%= @patient.db %></p>
 <p>Owner Contact: <%= @patient.owner_contact %></p>
-
+<p>Veterinarian: <%= @patient.vets.each do |vet|%></p>
 <p>Appointment Notes: <%= @patient.notes %></p>
 
 <p><a href="/patients/<%= @patient.id %>/edit">Edit</a></p>
