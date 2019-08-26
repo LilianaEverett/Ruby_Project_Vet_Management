@@ -22,6 +22,7 @@ end
 # show
 get '/owners/:id' do
   @owner = Owner.find_by_id(params['id'].to_i)
+  @patients = @owner.patients
   erb(:"owners/show")
 end
 
@@ -40,11 +41,4 @@ post '/owners/:id/delete' do
   owner = Owner.find_by_id(params['id'])
   owner.delete
   redirect to '/owners'
-end
-
-get '/owners/:id/patients' do
-  @owner = Owner.find_by_id(params['id'])
-  @patients = @owner.patients
-  # binding.pry
-  erb(:"owners/patients")
 end

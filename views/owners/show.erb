@@ -4,7 +4,9 @@
 <p>Last Name: <%= @owner.last_name %></p>
 <p>Contact: <%= @owner.contact %></p>
 
-<p><a href="/owners/<%= @owner.id %>/patients">Pets</a></p>
+<% @patients.each do |patient| %>
+<a href="/patients/<%= patient.id %>"><%= patient.name + " " + patient.db %></a>
+<% end %>
 
 <p><a href="/owners/<%= @owner.id %>/edit">Edit</a></p>
 <form method="post" action="/owners/ <%= @owner.id %>/delete">

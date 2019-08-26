@@ -22,6 +22,7 @@ end
 # show
 get '/vets/:id' do
   @vet = Vet.find_by_id(params['id'].to_i)
+  @patients = @vet.patients
   erb(:"vets/show")
 end
 
@@ -40,10 +41,4 @@ post '/vets/:id/delete' do
   vet = Vet.find_by_id(params['id'])
   vet.delete
   redirect to '/vets'
-end
-
-get '/vets/:id/patients' do
-  @vet = Vet.find_by_id(params['id'])
-  @patients = @vet.patients
-  erb(:"vets/patients")
 end
