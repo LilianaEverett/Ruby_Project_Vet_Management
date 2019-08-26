@@ -15,7 +15,7 @@
     <label for="vet_select">Select House:</label>
       <select name="vet_id" id="vet_select">
         <% @vets.each do |vet| %>
-            <option value=<%= vet.id %>><%= vet.first_name %></option>
+            <option value=<%= vet.id %>><%= vet.first_name %> <%= vet.last_name %></option>
         <% end %>
       </select>
 

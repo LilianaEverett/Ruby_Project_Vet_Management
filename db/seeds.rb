@@ -11,7 +11,13 @@ vet1 = Vet.new({
   "last_name" => "Halcrow"
 })
 
+vet2 = Vet.new({
+  "first_name" => "Anne",
+  "last_name" => "Halcrow"
+})
+
 vet1.save()
+vet2.save()
 
 patient1 = Patient.new({
   "name" => "Romero",
@@ -22,7 +28,17 @@ patient1 = Patient.new({
   "notes" => "This is a note"
 })
 
+patient2 = Patient.new({
+  "name" => "Ruffus",
+  "type" => "cat",
+  "db" => "01/08/2017",
+  "owner_contact" => "07856256374",
+  "vet_id" => vet1.id,
+  "notes" => "This is a note"
+})
+
 patient1.save()
+patient2.save()
 
 
 

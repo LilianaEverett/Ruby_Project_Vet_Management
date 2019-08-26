@@ -27,9 +27,9 @@
       <select name="vet_select" id="vet_select" selected="<%= @patient.vet_id  %>">
         <% @vets.each do |vet| %>
           <% if vet.id == @patient.vet_id %>
-            <option value=<%= vet.id %> selected><%= vet.first_name %></option>
+            <option value=<%= vet.id %> selected><%= vet.first_name %> <%= vet.last_name %></option>
           <% else %>
-            <option value=<%= vet.id %>><%= vet.first_name %></option>
+            <option value=<%= vet.id %>><%= vet.first_name %> <%= vet.last_name %></option>
           <% end %>
         <% end %>
       </select>

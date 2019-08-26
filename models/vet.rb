@@ -1,4 +1,5 @@
 require_relative( '../db/sql_runner' )
+require_relative('./patient')
 
 class Vet
 
@@ -70,6 +71,14 @@ class Vet
 
   def format_name
     return "#{@first_name.capitalize} #{@last_name.capitalize}"
+  end
+
+  def patients
+    sql = "SELECT * FROM patients WHERE vet_id = $1"
+    values = [@id]
+    patients_data = SqlRunner.run(sql, values)
+    patients = Patient.map_items(patients_data)
+    return patients
   end
 
 end

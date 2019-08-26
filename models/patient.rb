@@ -37,6 +37,25 @@ class Patient
     @id = results.first()['id'].to_i
   end
 
+  def update()
+      sql = "UPDATE patients
+      SET
+      (
+        name,
+        type,
+        db,
+        owner_contact,
+        vet_id,
+        notes
+      ) =
+      (
+        $1, $2, $3, $4, $5, $6
+      )
+      WHERE id = $7"
+      values = [@name, @type, @db, @owner_contact, @vet_id, @notes, @id]
+      SqlRunner.run(sql, values)
+    end
+
   def self.all()
     sql = "SELECT * FROM patients"
     results = SqlRunner.run( sql )
@@ -64,30 +83,16 @@ class Patient
   end
 
   def self.find_by_id( id )
-  sql = "SELECT * FROM patients
-  WHERE id = $1"
-  values = [id]
-  results = SqlRunner.run( sql, values )
-  return Patient.new( results.first )
-end
+    sql = "SELECT * FROM patients
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run( sql, values )
+    return Patient.new( results.first )
+  end
 
-def update()
-    sql = "UPDATE patients
-    SET
-    (
-      name,
-      type,
-      db,
-      owner_contact,
-      vet_id,
-      notes
-    ) =
-    (
-      $1, $2, $3, $4, $5, $6
-    )
-    WHERE id = $7"
-    values = [@name, @type, @db, @owner_contact, @vet_id, @notes, @id]
-    SqlRunner.run(sql, values)
+  def self.map_items(patients_data)
+    result = patients_data.map { |patient| Patient.new(patient)}
+    return result
   end
 
 end

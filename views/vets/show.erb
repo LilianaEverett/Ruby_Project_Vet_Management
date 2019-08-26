@@ -3,6 +3,9 @@
 <p>First Name: <%= @vet.first_name %></p>
 <p>Last Name: <%= @vet.last_name %></p>
 
+<p><a href="/vets/<%= @vet.id %>/patients">Patients List</a></p>
+
+
 <p><a href="/vets/<%= @vet.id %>/edit">Edit</a></p>
 <form method="post" action="/vets/ <%= @vet.id %>/delete">
   <input type="submit" value="Delete">
