@@ -1,0 +1,7 @@
+<nav id="menu">
+  <li class="menu-item"><a href='/owners/new'>Add New</a></li>
+</nav>
+
+<% @owners.each do |owner| %>
+  <p>Name: <a href= "/owners/<%= owner.id %>"><%= owner.format_name %> </a></p>
+<% end %>

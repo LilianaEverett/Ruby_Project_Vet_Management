@@ -1,19 +1,21 @@
 require_relative( '../db/sql_runner' )
 require_relative('./vet')
+require_relative('./owner')
 
 class Patient
 
   attr_reader :id, :vet_id
-  attr_accessor :name, :type, :db, :owner_contact, :notes
+  attr_accessor :name, :type, :db, :owner_contact, :notes, :pic
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @type = options['type']
     @db = options['db']
-    @owner_contact = options['owner_contact']
+    @owner_id = options['vet_id'].to_i
     @vet_id = options['vet_id'].to_i
     @notes = options['notes']
+    @pic = options['pic']
 
   end
 
@@ -23,16 +25,17 @@ class Patient
       name,
       type,
       db,
-      owner_contact,
+      owner_id,
       vet_id,
-      notes
+      notes,
+      pic
     )
     VALUES
     (
-      $1, $2, $3, $4, $5, $6
+      $1, $2, $3, $4, $5, $6, $7
     )
     RETURNING id"
-    values = [@name, @type, @db, @owner_contact, @vet_id, @notes]
+    values = [@name, @type, @db, @owner_id, @vet_id, @notes, @pic]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -44,15 +47,16 @@ class Patient
         name,
         type,
         db,
-        owner_contact,
+        owner_id,
         vet_id,
-        notes
+        notes,
+        pic
       ) =
       (
-        $1, $2, $3, $4, $5, $6
+        $1, $2, $3, $4, $5, $6, $7
       )
-      WHERE id = $7"
-      values = [@name, @type, @db, @owner_contact, @vet_id, @notes, @id]
+      WHERE id = $8"
+      values = [@name, @type, @db, @owner_id, @vet_id, @notes, @pic, @id]
       SqlRunner.run(sql, values)
     end
 
