@@ -2,9 +2,9 @@
 
 <p>First Name: <%= @owner.first_name %></p>
 <p>Last Name: <%= @owner.last_name %></p>
-<p>Last Name: <%= @owner.contact %></p>
+<p>Contact: <%= @owner.contact %></p>
 
-<p><a href="/owners/<%= @owner.id %>/pets">Pets</a></p>
+<p><a href="/owners/<%= @owner.id %>/patients">Pets</a></p>
 
 <p><a href="/owners/<%= @owner.id %>/edit">Edit</a></p>
 <form method="post" action="/owners/ <%= @owner.id %>/delete">

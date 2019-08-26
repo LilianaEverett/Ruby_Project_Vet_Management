@@ -13,24 +13,24 @@
     </div>
 
     <div class="form-el">
-      <label for="db">Type:</label>
+      <label for="db">Date Of Birth:</label>
       <input type="text" name="db" id="db" value="<%= @patient.db%>"/>
     </div>
 
     <div class="form-el">
-      <label for="owner_contact">Type:</label>
-      <input type="text" name="owner_contact" id="owner_contact" value="<%= @patient.owner_contact%>"/>
+      <label for="owner_id">Select Owner:</label>
+      <select name="owner_id" id="owner_id" selected="<%= @patient.owner_id  %>">
+        <% @owners.each do |owner| %>
+            <option value= "<%= owner.id %>" <%= "selected" if @patient.owner_id == owner.id %>> <%= owner.format_name %></option>
+        <% end %>
+      </select>
     </div>
 
     <div class="form-el">
-      <label for="vet_select">Select Veterinarian:</label>
-      <select name="vet_select" id="vet_select" selected="<%= @patient.vet_id  %>">
+      <label for="vet_id">Select Veterinarian:</label>
+      <select name="vet_id" id="vet_id" selected="<%= @patient.vet_id  %>">
         <% @vets.each do |vet| %>
-          <% if vet.id == @patient.vet_id %>
-            <option value=<%= vet.id %> selected><%= vet.first_name %> <%= vet.last_name %></option>
-          <% else %>
-            <option value=<%= vet.id %>><%= vet.first_name %> <%= vet.last_name %></option>
-          <% end %>
+            <option value= "<%= vet.id %>" <%= "selected" if @patient.vet_id == vet.id %>> <%= vet.format_name %></option>
         <% end %>
       </select>
     </div>
@@ -38,6 +38,11 @@
     <div class="form-el">
       <label for="notes">Appointment Notes:</label>
       <input type="text" name="notes" id="notes" value="<%= @patient.notes %>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="pic">Picture: </label>
+      <input type="text" name="pic" id="pic" value="<%= @patient.pic %>">
     </div>
 
     <div class="form-el">

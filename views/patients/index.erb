@@ -3,5 +3,7 @@
 </nav>
 
 <% @patients.each do |patient| %>
+
   <p>Name: <a href= "/patients/<%= patient.id %>"><%= patient.name + " " + patient.db %></a></p>
+
 <% end %>

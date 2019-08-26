@@ -75,7 +75,7 @@ class Owner
     return "#{@first_name.capitalize} #{@last_name.capitalize}"
   end
 
-  def pets
+  def patients
     sql = "SELECT * FROM patients WHERE owner_id = $1"
     values = [@id]
     patients_data = SqlRunner.run(sql, values)

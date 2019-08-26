@@ -31,19 +31,20 @@ get '/owners/:id/edit' do
 end
 
 post '/owners/:id' do
-  owners = Owner.new(params)
+  owner = Owner.new(params)
   owner.update
   redirect to "/owners/#{params['id']}"
 end
 
 post '/owners/:id/delete' do
-  owner = Vet.find_by_id(params['id'])
+  owner = Owner.find_by_id(params['id'])
   owner.delete
   redirect to '/owners'
 end
 
-get '/owners/:id/pets' do
+get '/owners/:id/patients' do
   @owner = Owner.find_by_id(params['id'])
-  @patients = @owner.pets
-  erb(:"owners/pets")
+  @patients = @owner.patients
+  # binding.pry
+  erb(:"owners/patients")
 end

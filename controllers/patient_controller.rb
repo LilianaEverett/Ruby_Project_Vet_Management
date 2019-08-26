@@ -2,15 +2,21 @@ require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/patient.rb' )
 require_relative('../models/vet.rb')
+require_relative('../models/owner.rb')
+
 also_reload( '../models/*' )
 
 get '/patients' do
+  @owners = Owner.all
+  @vets = Vet.all
   @patients = Patient.all()
   erb ( :"patients/index" )
 end
 
 # new
 get '/patients/new' do
+  @patients = Patient.all
+  @owners = Owner.all
   @vets = Vet.all
   erb(:"patients/new")
 end
@@ -27,6 +33,7 @@ get '/patients/:id' do
 end
 
 get '/patients/:id/edit' do
+  @owners = Owner.all
   @vets = Vet.all
   @patient = Patient.find_by_id(params['id'])
   erb(:"patients/edit")

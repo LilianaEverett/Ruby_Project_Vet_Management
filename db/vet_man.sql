@@ -24,8 +24,8 @@ CREATE TABLE patients
   name VARCHAR(255) NOT NULL,
   type VARCHAR(255) NOT NULL,
   db VARCHAR(255),
-  owner_id INT4 REFERENCES owners(id),
-  vet_id INT4 REFERENCES vets(id),
+  owner_id INT4 REFERENCES owners(id) ON DELETE OR UPDATE CASCADE,
+  vet_id INT4 REFERENCES vets(id) ON DELETE OR UPDATE CASCADE,
   notes varchar,
   pic VARCHAR
 );

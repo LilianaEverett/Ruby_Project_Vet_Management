@@ -9,18 +9,25 @@
   <label for="db">Date of Birth: </label>
   <input type="text" name="db" id="db">
 
-  <label for="owner_contact">Owner Contact: </label>
-  <input type="text" name="owner_contact" id="owner_contact">
+  <label for="owner_select">Select Owner:</label>
+    <select name="owner_id" id="owner_select">
+      <% @owners.each do |owner| %>
+          <option value=<%= owner.id %>><%= owner.format_name %></option>
+      <% end %>
+  </select>
 
-    <label for="vet_select">Select House:</label>
-      <select name="vet_id" id="vet_select">
-        <% @vets.each do |vet| %>
-            <option value=<%= vet.id %>><%= vet.first_name %> <%= vet.last_name %></option>
-        <% end %>
-      </select>
+  <label for="vet_select">Select Vet:</label>
+    <select name="vet_id" id="vet_select">
+      <% @vets.each do |vet| %>
+          <option value=<%= vet.id %>><%= vet.format_name %></option>
+      <% end %>
+  </select>
 
   <label for="notes">Appointment Notes: </label>
   <input type="text" name="notes" id="notes">
+
+  <label for="pic">Picture: </label>
+  <input type="text" name="pic" id="pic">
 
   <input type="submit" value="Save">
 </form>

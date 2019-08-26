@@ -1,5 +1,6 @@
 require_relative( "../models/patient.rb" )
 require_relative( "../models/vet.rb" )
+require_relative("../models/owner.rb")
 
 require("pry-byebug")
 
@@ -25,7 +26,7 @@ owner1 = Owner.new({
   "contact" => "07865435678"
 })
 
-owner1.save 
+owner1.save
 
 patient1 = Patient.new({
   "name" => "Romero",
