@@ -2,8 +2,14 @@
   <li class="menu-item"><a href='/patients/new'>Add New</a></li>
 </nav>
 
-<% @patients.each do |patient| %>
-
-  <p>Name: <a href= "/patients/<%= patient.id %>"><%= patient.name + " " + patient.db %></a></p>
-
-<% end %>
+  <table style="width:100%">
+    <tr>
+      <td>
+        <% @patients.each do |patient| %>
+        <img src="/images/<%= patient.pic %>"/>
+        <a href= "/patients/<%= patient.id %>"><%= patient.name %></a>
+        <a href= "/patients/<%= patient.id %>">Show Details</a>
+        <% end %>
+      </td>
+    </tr>
+  </table>
