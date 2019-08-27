@@ -5,7 +5,7 @@
 <p>Contact: <%= @owner.contact %></p>
 
 <% @patients.each do |patient| %>
-<a href="/patients/<%= patient.id %>"><%= patient.name + " " + patient.db %></a>
+<a href="/patients/<%= patient.id %>"><%= patient.name %></a>
 <% end %>
 
 <p><a href="/owners/<%= @owner.id %>/edit">Edit</a></p>

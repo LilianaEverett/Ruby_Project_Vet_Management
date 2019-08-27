@@ -6,8 +6,7 @@ also_reload( '../models/*' )
 
 get '/owners' do
   @owners = Owner.all()
-  @owner = Owner.find_by_id(params['id'].to_i)
-  @patients = @owner.patients
+
   erb ( :"owners/index" )
 end
 
