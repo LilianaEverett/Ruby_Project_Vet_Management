@@ -1,9 +1,12 @@
+<h2>Veterinarians List</h2>
+
 <nav id="menu">
   <li class="menu-item"><a href='/vets/new'>Add New</a></li>
 </nav>
 
+<% @vets.each do |vet| %>
+
 <div class="">
-  <% @vets.each do |vet| %>
     <div class="">
       <img src="/images/vet.jpg" alt="">
       <div class="">
@@ -11,7 +14,6 @@
       </div>
       <a href= "/vets/<%= vet.id %>">Show Details</a>
     </div>
-  <% end %>
 </div>
 
-    
+<% end %>

@@ -19,11 +19,14 @@
           <label for="contact">Contact:</label>
           <input type="text" name="contact" id="contact" value="<%= @owner.contact%>"/>
         </div>
+
+        <div class="form-el">
+          <input type="submit" value="Save"/>
+        </div>
       </div>
     </form>
   </div>
   <div class="">
-    <input type="submit" value="Save"/>
     <form method="post" action="/owners/ <%= @owner.id %>/delete">
       <input type="submit" value="Delete">
     </form>

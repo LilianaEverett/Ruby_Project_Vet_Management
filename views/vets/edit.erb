@@ -1,20 +1,37 @@
 <h2>Edit <%= @vet.format_name %></h2>
-<form method="POST" action="/vets/<%= @vet.id %>">
-  <div class="form-wrapper">
 
-    <div class="form-el">
-      <label for="first_name">First Name:</label>
-      <input type="text" name="first_name" id="first_name" value="<%= @vet.first_name %>"/>
-    </div>
+<div class="">
+  <form method="post" action="/vets/ <%= @vet.id %>/delete">
+    <input type="submit" value="Delete">
+  </form>
+</div>
 
-    <div class="form-el">
-      <label for="last_name">Last Name:</label>
-      <input type="text" name="last_name" id="last_name" value="<%= @vet.last_name%>"/>
-    </div>
+<div class="">
+  <img src="/images/vet.jpg" alt="">
+  <div class="">
+    <form method="POST" action="/vets/<%= @vet.id %>">
+      <div class="form-wrapper">
 
-    <div class="form-el">
-      <input type="submit" value="Save"/>
-    </div>
+        <div class="form-el">
+          <label for="first_name">First Name:</label>
+          <input type="text" name="first_name" id="first_name" value="<%= @vet.first_name %>"/>
+        </div>
 
+        <div class="form-el">
+          <label for="last_name">Last Name:</label>
+          <input type="text" name="last_name" id="last_name" value="<%= @vet.last_name%>"/>
+        </div>
+
+        <div class="form-el">
+          <label for="pic">Picture: </label>
+          <input type="text" name="pic" id="pic">
+        </div>
+
+        <div class="form-el">
+          <input type="submit" value="Save"/>
+        </div>
+
+      </div>
+    </form>
   </div>
-</form>
+</div>

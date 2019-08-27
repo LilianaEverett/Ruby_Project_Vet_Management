@@ -1,14 +1,20 @@
-<p>Name: <%= @patient.name %></p>
-<p>Type: <%= @patient.type %></p>
-<p>Date of Birth: <%= @patient.db %></p>
-<p>Owner: <%= @patient.get_owner.format_name%></p>
-<p>Veterinarian: <%= @patient.get_vet.format_name%></p>
-<p>Appointment Notes: <%= @patient.notes %></p>
-<img src="/images/<%= @patient.pic %>" />
+<div class="">
+  <p><a href="/patients/<%= @patient.id %>/edit">Edit</a></p>
+  <form method="post" action="/patients/ <%= @patient.id %>/delete">
+    <input type="submit" value="Delete">
+  </form>
+</div>
 
-
-<p><a href="/patients/<%= @patient.id %>/edit">Edit</a></p>
-<form method="post" action="/patients/ <%= @patient.id %>/delete"
->
-  <input type="submit" value="Delete">
-</form>
+<div class="">
+  <div class="">
+    <img src="/images/<%= @patient.pic %>" />
+  </div>
+  <div class="">
+    <p>Name: <%= @patient.name %></p>
+    <p>Type: <%= @patient.type %></p>
+    <p>Date of Birth: <%= @patient.db %></p>
+    <p>Owner: <%= @patient.get_owner.format_name%></p>
+    <p>Veterinarian: <%= @patient.get_vet.format_name%></p>
+    <p>Appointment Notes: <%= @patient.notes %></p>
+  </div>
+</div>

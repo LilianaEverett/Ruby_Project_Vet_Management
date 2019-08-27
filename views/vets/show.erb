@@ -1,14 +1,20 @@
 
+<div class="">
+  <p><a href="/vets/<%= @vet.id %>/edit">Edit</a></p>
+  <form method="post" action="/vets/ <%= @vet.id %>/delete">
+    <input type="submit" value="Delete">
+  </form>
+</div>
 
-<p>First Name: <%= @vet.first_name %></p>
-<p>Last Name: <%= @vet.last_name %></p>
+<div class="">
+  <img src="/images/vet.jpg" alt="">
+  <div class="">
+    <p><%= @vet.format_name %></p>
+  </div>
+</div>
 
-<% @patients.each do |patient| %>
-<a href="/patients/<%= patient.id %>"><%= patient.name %></a>
-<% end %>
-
-
-<p><a href="/vets/<%= @vet.id %>/edit">Edit</a></p>
-<form method="post" action="/vets/ <%= @vet.id %>/delete">
-  <input type="submit" value="Delete">
-</form>
+<div class="">
+  <% @patients.each do |patient| %>
+  <a href="/patients/<%= patient.id %>"><%= patient.name %></a>
+  <% end %>
+</div>
