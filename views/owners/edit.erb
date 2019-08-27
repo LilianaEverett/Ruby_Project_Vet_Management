@@ -1,25 +1,32 @@
 <h2>Edit <%= @owner.format_name %></h2>
-<form method="POST" action="/owners/<%= @owner.id %>">
-  <div class="form-wrapper">
 
-    <div class="form-el">
-      <label for="first_name">First Name:</label>
-      <input type="text" name="first_name" id="first_name" value="<%= @owner.first_name.capitalize %>"/>
-    </div>
+<div class="">
+  <div class="">
+    <form method="POST" action="/owners/<%= @owner.id %>">
+      <div class="form-wrapper">
 
-    <div class="form-el">
-      <label for="last_name">Last Name:</label>
-      <input type="text" name="last_name" id="last_name" value="<%= @owner.last_name.capitalize%>"/>
-    </div>
+        <div class="form-el">
+          <label for="first_name">First Name:</label>
+          <input type="text" name="first_name" id="first_name" value="<%= @owner.first_name.capitalize %>"/>
+        </div>
 
-    <div class="form-el">
-      <label for="contact">Contact:</label>
-      <input type="text" name="contact" id="contact" value="<%= @owner.contact%>"/>
-    </div>
+        <div class="form-el">
+          <label for="last_name">Last Name:</label>
+          <input type="text" name="last_name" id="last_name" value="<%= @owner.last_name.capitalize%>"/>
+        </div>
 
-    <div class="form-el">
-      <input type="submit" value="Save"/>
-    </div>
-
+        <div class="form-el">
+          <label for="contact">Contact:</label>
+          <input type="text" name="contact" id="contact" value="<%= @owner.contact%>"/>
+        </div>
+      </div>
+    </form>
   </div>
-</form>
+  <div class="">
+    <input type="submit" value="Save"/>
+    <form method="post" action="/owners/ <%= @owner.id %>/delete">
+      <input type="submit" value="Delete">
+    </form>
+    <a href="/owners/<%= @owner.id %>">Pets</a>
+  </div>
+</div>

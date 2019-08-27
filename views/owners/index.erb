@@ -1,18 +1,23 @@
+<h2>Client List</h2>
+
 <nav id="menu">
   <li class="menu-item"><a href='/owners/new'>Add New</a></li>
 </nav>
 
-<table style="width:100%">
-  <tr>
-    <td>
-      <% @owners.each do |owner| %>
-        <a href= "/owners/<%= owner.id %>"><%= owner.format_name %> </a>
-      <% end %>
-    </td>
-      <% @owners.each do |owner| %>
-      <a href="owners/<%= owner.id %>">Show Details</a>
-      <% end %>
-    <td>
-    </td>
-  </tr>
-</table>
+<% @owners.each do |owner| %>
+
+    <div class="">
+      <div class="">
+        <p><%= owner.format_name %> </p>
+        <p><%= owner.contact %></p>
+      </div>
+      <div class="">
+        <a href="/owners/<%= owner.id %>/edit">Edit</a>
+        <form method="post" action="/owners/ <%= owner.id %>/delete">
+          <input type="submit" value="Delete">
+        </form>
+        <a href="/owners/<%= owner.id %>">Pets</a>
+      </div>
+    </div>
+
+<% end %>

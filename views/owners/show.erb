@@ -1,14 +1,19 @@
 
-
-<p>First Name: <%= @owner.first_name %></p>
-<p>Last Name: <%= @owner.last_name %></p>
-<p>Contact: <%= @owner.contact %></p>
-
-<% @patients.each do |patient| %>
-<a href="/patients/<%= patient.id %>"><%= patient.name %></a>
-<% end %>
-
-<p><a href="/owners/<%= @owner.id %>/edit">Edit</a></p>
-<form method="post" action="/owners/ <%= @owner.id %>/delete">
-  <input type="submit" value="Delete">
-</form>
+<div class="">
+  <div class="">
+    <p><%= @owner.format_name %> </p>
+    <p><%= @owner.contact %></p>
+  </div>
+  <div class="">
+    <a href="/owners/<%= @owner.id %>/edit">Edit</a>
+    <form method="post" action="/owners/ <%= @owner.id %>/delete">
+      <input type="submit" value="Delete">
+    </form>
+    <a href="/owners/<%= @owner.id %>">Pets</a>
+  </div>
+  <div class="">
+    <% @patients.each do |patient| %>
+    <a href="/patients/<%= patient.id %>"><%= patient.name %></a>
+    <% end %>
+  </div>
+</div>

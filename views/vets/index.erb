@@ -2,16 +2,16 @@
   <li class="menu-item"><a href='/vets/new'>Add New</a></li>
 </nav>
 
-
-<table style="width:100%">
-  <tr>
-    <td>
-      <% @vets.each do |vet| %>
-      <img src="/images/vet.jpg"/>
+<div class="">
+  <% @vets.each do |vet| %>
+    <div class="">
+      <img src="/images/vet.jpg" alt="">
+      <div class="">
         <a href= "/vets/<%= vet.id %>"><%= vet.format_name %> </a>
-        <a href= "/vets/<%= vet.id %>">Show Details</a>
-      <% end %>
+      </div>
+      <a href= "/vets/<%= vet.id %>">Show Details</a>
+    </div>
+  <% end %>
+</div>
 
-    </td>
-  </tr>
-</table>
+    
