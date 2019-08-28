@@ -3,13 +3,17 @@
   width: 600px;
   text-align: center;
   margin: auto;
+  padding-top: 30px;
+
 }
 
 .pat-show {
   display: block;
   width: 600px;
-  text-align: center;
+  text-align: left;
   margin: auto;
+  padding-top: 30px;
+
 }
 
 .pat-index-each {
@@ -22,8 +26,6 @@
   padding: 10px;
   align-items: center;
 }
-
-
 
 .pat-index-each img {
   width:150px;
@@ -39,7 +41,6 @@
 .list {
   text-align: center;
   font-size: 40px;
-  padding-bottom: 10px;
 }
 
 .add-new {

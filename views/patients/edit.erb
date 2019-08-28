@@ -1,16 +1,16 @@
-<h2>Edit <%= @patient.name %></h2>
 
-<div class="">
-  <form method="post" action="/patients/ <%= @patient.id %>/delete">
-    <input type="submit" value="Delete">
-  </form>
+<div class="list">
+  Edit <%= @patient.name %>
 </div>
 
-<div class="">
-  <img src="/images/<%= @patient.pic %>" />
-  <div class="">
-    <form method="POST" action="/patients/<%= @patient.id %>">
-      <div class="form-wrapper">
+<div class="pat-show">
+
+  <div class="pat-index-each">
+    <div class="show-image">
+      <img src="/images/<%= @patient.pic %>" />
+    </div>
+      <div class="show-text">
+        <form method="POST" action="/patients/<%= @patient.id %>">
 
         <div class="form-el">
           <label for="name">Name:</label>
@@ -58,8 +58,9 @@
         <div class="form-el">
           <input type="submit" value="Save"/>
         </div>
+      </form>
 
       </div>
-    </form>
+
   </div>
 </div>
