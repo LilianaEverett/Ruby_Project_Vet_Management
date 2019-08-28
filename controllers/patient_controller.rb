@@ -44,7 +44,7 @@ end
 post '/patients/:id' do
   patient = Patient.new(params)
   patient.update
-  redirect to "/patients/#{params['id']}"
+  redirect to "/patients/#{params['id']}/show"
 end
 
 post '/patients/:id/delete' do

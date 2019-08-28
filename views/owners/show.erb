@@ -25,7 +25,7 @@
     <% @patients.each do |patient| %>
       <div class="pic-list-el">
         <img src="/images/<%= patient.pic %>" alt="">
-        <a href="/patients/<%= patient.id %>"><%= patient.name %></a>
+        <a href="/patients/<%= patient.id %>/show"><%= patient.name %></a>
       </div>
     <% end %>
   </div>

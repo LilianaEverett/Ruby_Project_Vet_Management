@@ -34,7 +34,7 @@ end
 post '/vets/:id' do
   vet = Vet.new(params)
   vet.update
-  redirect to "/vets/#{params['id']}"
+  redirect to "/vets/#{params['id']}/show"
 end
 
 post '/vets/:id/delete' do

@@ -35,7 +35,7 @@ end
 post '/owners/:id' do
   owner = Owner.new(params)
   owner.update
-  redirect to "/owners/#{params['id']}"
+  redirect to "/owners/#{params['id']}/show"
 end
 
 post '/owners/:id/delete' do
