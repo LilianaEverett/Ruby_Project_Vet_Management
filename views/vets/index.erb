@@ -1,21 +1,25 @@
-<h2>Veterinarians List</h2>
 
-<nav id="menu">
-  <li class="menu-item"><a href='/vets/new'>Add New</a></li>
-</nav>
+<a class="add-new" href='/vets/new'>Add New</a>
 
-<% @vets.each do |vet| %>
-
-<div class="">
-    <div class="">
-      <img src="/images/vet.jpg" alt="">
-      <div class="">
-        <a href= "/vets/<%= vet.id %>"><%= vet.format_name %> </a>
-      </div>
-      <form method="get" action="/vets/ <%= vet.id %>/show">
-        <input type="submit" value="Show Details">
-      </form>
-    </div>
+<div class="list">
+  Veterinarians List
 </div>
 
-<% end %>
+<div class="pat-index">
+  <% @vets.each do |vet| %>
+    <div class="pat-index-each">
+      <div class="">
+        <img src="/images/vet.jpg" alt="">
+      </div>
+
+      <div class="text">
+        <%= vet.format_name %>
+      </div>
+      <div class="show-details">
+        <form method="get" action="/vets/ <%= vet.id %>/show">
+          <input type="submit" value="Show Details">
+        </form>
+      </div>
+    </div>
+  <% end %>
+</div>

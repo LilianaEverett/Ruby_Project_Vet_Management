@@ -19,10 +19,9 @@
           <p>Veterinarian: <a href="/vets/<%= vet.id %>/show"><%= @patient.get_vet.format_name%></a></p>
         <% end %>
       <% end %>
-
         <p>Appointment Notes: <%= @patient.notes %></p>
     </div>
-    <div class="">
+    <div class="buttons">
       <form method="get" action="/patients/<%= @patient.id %>/edit">
         <input type="submit" value="Edit">
       </form>

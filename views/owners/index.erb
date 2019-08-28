@@ -12,10 +12,11 @@
         <p>Name: <%= owner.format_name %> </p>
         <p>Contact: <%= owner.contact %></p>
       </div>
-      <div class="">
+      <div class="buttons">
         <form method="get" action="/owners/ <%= owner.id %>/edit">
           <input type="submit" value="Edit">
-        </form>        <form method="post" action="/owners/ <%= owner.id %>/delete">
+        </form>
+        <form method="post" action="/owners/ <%= owner.id %>/delete">
           <input type="submit" value="Delete">
         </form>
         <form method="get" action="/owners/ <%= owner.id %>/show">

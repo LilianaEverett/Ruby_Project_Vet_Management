@@ -7,22 +7,32 @@
   <div class="pat-index-each">
 
     <form method="post" action="/patients">
-      <div class="">
+      <div class="form">
         <label for="name">Name: </label>
         <input type="text" name="name" id="name">
       </div>
 
-      <div class="">
+      <div class="form">
         <label for="type">type: </label>
         <input type="text" name="type" id="type">
       </div>
 
-      <div class="">
+      <div class="form">
         <label for="db">Date of Birth: </label>
         <input type="text" name="db" id="db">
       </div>
 
-      <div class="">
+      <div class="form">
+        <label for="notes">Appointment Notes: </label>
+        <input type="text" name="notes" id="notes">
+      </div>
+
+      <div class="form">
+        <label for="pic">Picture: </label>
+        <input type="text" name="pic" id="pic">
+      </div>
+
+      <div class="form">
         <label for="owner_select">Select Owner:</label>
           <select name="owner_id" id="owner_select">
             <% @owners.each do |owner| %>
@@ -31,7 +41,7 @@
         </select>
       </div>
 
-      <div class="">
+      <div class="form">
         <label for="vet_select">Select Vet:</label>
           <select name="vet_id" id="vet_select">
             <% @vets.each do |vet| %>
@@ -40,17 +50,7 @@
         </select>
       </div>
 
-      <div class="">
-        <label for="notes">Appointment Notes: </label>
-        <input type="text" name="notes" id="notes">
-      </div>
-
-      <div class="">
-        <label for="pic">Picture: </label>
-        <input type="text" name="pic" id="pic">
-      </div>
-
-      <div class="">
+      <div class="buttons">
         <input type="submit" value="Save">
 
       </div>

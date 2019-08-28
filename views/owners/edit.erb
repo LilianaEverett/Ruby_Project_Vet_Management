@@ -1,37 +1,30 @@
-<h2>Edit <%= @owner.format_name %></h2>
+<div class="list">
+  Edit <%= @owner.format_name %>
+</div>
 
-<div class="">
-  <div class="">
+<div class="pat-show">
+  <div class="pat-index-each">
     <form method="POST" action="/owners/<%= @owner.id %>">
-      <div class="form-wrapper">
-
-        <div class="form-el">
+        <div class="form">
           <label for="first_name">First Name:</label>
           <input type="text" name="first_name" id="first_name" value="<%= @owner.first_name.capitalize %>"/>
         </div>
 
-        <div class="form-el">
+        <div class="form">
           <label for="last_name">Last Name:</label>
           <input type="text" name="last_name" id="last_name" value="<%= @owner.last_name.capitalize%>"/>
         </div>
 
-        <div class="form-el">
+        <div class="form">
           <label for="contact">Contact:</label>
           <input type="text" name="contact" id="contact" value="<%= @owner.contact%>"/>
         </div>
 
-        <div class="form-el">
+        <div class="buttons">
           <input type="submit" value="Save"/>
         </div>
-      </div>
     </form>
-  </div>
-  <div class="">
-    <form method="post" action="/owners/ <%= @owner.id %>/delete">
-      <input type="submit" value="Delete">
-    </form>
-    <form method="get" action="/owners/ <%= @owner.id %>">
-      <input type="submit" value="Pets">
-    </form>
+
+
   </div>
 </div>
