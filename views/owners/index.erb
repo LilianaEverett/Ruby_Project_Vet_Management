@@ -1,15 +1,16 @@
-<h2>Client List</h2>
 
-<nav id="menu">
-  <li class="menu-item"><a href='/owners/new'>Add New</a></li>
-</nav>
+<a class="add-new" href='/owners/new'>Add New</a>
 
-<% @owners.each do |owner| %>
+<div class="list">
+  Clients List
+</div>
 
-    <div class="">
+<div class="pat-show">
+  <% @owners.each do |owner| %>
+    <div class="pat-index-each">
       <div class="">
-        <p><%= owner.format_name %> </p>
-        <p><%= owner.contact %></p>
+        <p>Name: <%= owner.format_name %> </p>
+        <p>Contact: <%= owner.contact %></p>
       </div>
       <div class="">
         <form method="get" action="/owners/ <%= owner.id %>/edit">
@@ -22,5 +23,5 @@
         </form>
       </div>
     </div>
-
-<% end %>
+  <% end %>
+</div>

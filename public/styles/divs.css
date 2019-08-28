@@ -4,7 +4,6 @@
   text-align: center;
   margin: auto;
   padding-top: 30px;
-
 }
 
 .pat-show {
@@ -13,7 +12,6 @@
   text-align: left;
   margin: auto;
   padding-top: 30px;
-
 }
 
 .pat-index-each {
@@ -53,4 +51,25 @@
 
 .show-text {
   text-align: left;
+}
+
+.pic-list {
+  display: flex;
+  border: solid;
+  border-width: thin;
+  margin: 10px;
+  max-height: 300px;
+  padding: 10px;
+  align-items: center;
+}
+
+.pic-list img {
+  border: solid thin;
+  height: 100px;
+}
+
+.pic-list-el {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
