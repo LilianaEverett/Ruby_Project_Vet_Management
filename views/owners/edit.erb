@@ -30,6 +30,8 @@
     <form method="post" action="/owners/ <%= @owner.id %>/delete">
       <input type="submit" value="Delete">
     </form>
-    <a href="/owners/<%= @owner.id %>">Pets</a>
+    <form method="get" action="/owners/ <%= @owner.id %>">
+      <input type="submit" value="Pets">
+    </form>
   </div>
 </div>

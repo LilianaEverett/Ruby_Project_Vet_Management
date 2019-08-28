@@ -1,20 +1,34 @@
-<div class="">
-  <p><a href="/patients/<%= @patient.id %>/edit">Edit</a></p>
-  <form method="post" action="/patients/ <%= @patient.id %>/delete">
-    <input type="submit" value="Delete">
-  </form>
-</div>
 
-<div class="">
-  <div class="">
-    <img src="/images/<%= @patient.pic %>" />
-  </div>
-  <div class="">
-    <p>Name: <%= @patient.name %></p>
-    <p>Type: <%= @patient.type %></p>
-    <p>Date of Birth: <%= @patient.db %></p>
-    <p>Owner: <%= @patient.get_owner.format_name%></p>
-    <p>Veterinarian: <%= @patient.get_vet.format_name%></p>
-    <p>Appointment Notes: <%= @patient.notes %></p>
+
+<div class="pat-index">
+  <div class="pat-index-each">
+    <div class="show-image">
+      <img src="/images/<%= @patient.pic %>" />
+    </div>
+    <div class="show-text">
+      <p>Name: <%= @patient.name %></p>
+      <p>Type: <%= @patient.type %></p>
+      <p>Date of Birth: <%= @patient.db %></p>
+      <% @owners.each do |owner| %>
+        <% if @patient.owner_id == owner.id %>
+          <p>Owner: <a href="/owners/<%= owner.id %>/show"><%= @patient.get_owner.format_name%></a></p>
+        <% end %>
+      <% end %>
+      <% @vets.each do |vet| %>
+        <% if @patient.vet_id == vet.id %>
+          <p>Veterinarian: <a href="/vets/<%= vet.id %>/show"><%= @patient.get_vet.format_name%></a></p>
+        <% end %>
+      <% end %>
+
+        <p>Appointment Notes: <%= @patient.notes %></p>
+    </div>
+    <div class="">
+      <form method="get" action="/patients/<%= @patient.id %>/edit">
+        <input type="submit" value="Edit">
+      </form>
+      <form method="post" action="/patients/ <%= @patient.id %>/delete">
+        <input type="submit" value="Delete">
+      </form>
+    </div>
   </div>
 </div>

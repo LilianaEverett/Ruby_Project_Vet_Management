@@ -1,0 +1,29 @@
+body {
+  background-color: rgb(224, 225, 227);
+  font-family: "verdana";
+  color: dimgrey;
+  text-decoration: none;
+  list-style: none;
+}
+
+nav {
+  text-decoration: none;
+}
+
+nav ul li {
+  display: inline;
+  padding: 10px;
+}
+
+ul {
+  border-bottom: rgb(27, 168, 205) solid;
+  padding: 10px;
+}
+
+.imglogo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  width: 40%;
+}

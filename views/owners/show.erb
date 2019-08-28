@@ -3,17 +3,23 @@
   <div class="">
     <p><%= @owner.format_name %> </p>
     <p><%= @owner.contact %></p>
-  </div>
-  <div class="">
-    <a href="/owners/<%= @owner.id %>/edit">Edit</a>
+
+    <form method="get" action="/owners/ <%= @owner.id %>/edit">
+      <input type="submit" value="Edit">
+    </form>
+
     <form method="post" action="/owners/ <%= @owner.id %>/delete">
       <input type="submit" value="Delete">
     </form>
-    <a href="/owners/<%= @owner.id %>">Pets</a>
+
+    <form method="get" action="/owners/ <%= @owner.id %>/show">
+      <input type="submit" value="Pets">
+    </form>
   </div>
-  <div class="">
+  <div class="pic-list">
     <% @patients.each do |patient| %>
-    <a href="/patients/<%= patient.id %>"><%= patient.name %></a>
+      <img src="/images/<%= patient.pic %>" alt="">
+      <a href="/patients/<%= patient.id %>"><%= patient.name %></a>
     <% end %>
   </div>
 </div>

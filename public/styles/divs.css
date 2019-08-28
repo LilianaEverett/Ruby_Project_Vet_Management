@@ -1,0 +1,55 @@
+.pat-index {
+  display: block;
+  width: 600px;
+  text-align: center;
+  margin: auto;
+}
+
+.pat-show {
+  display: block;
+  width: 600px;
+  text-align: center;
+  margin: auto;
+}
+
+.pat-index-each {
+  display: flex;
+  justify-content: space-around;
+  border: solid;
+  border-width: thin;
+  margin: 10px;
+  max-height: 300px;
+  padding: 10px;
+  align-items: center;
+}
+
+
+
+.pat-index-each img {
+  width:150px;
+  height: auto;
+  border:solid;
+  border-width: thin;
+}
+
+.text {
+  width: 200px;
+}
+
+.list {
+  text-align: center;
+  font-size: 40px;
+  padding-bottom: 10px;
+}
+
+.add-new {
+  padding-left: 20px;
+}
+
+.show-image {
+  flex-direction: row;
+}
+
+.show-text {
+  text-align: left;
+}

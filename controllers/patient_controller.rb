@@ -27,7 +27,9 @@ post '/patients' do
   redirect to("/patients")
 end
 
-get '/patients/:id' do
+get '/patients/:id/show' do
+  @owners = Owner.all
+  @vets = Vet.all
   @patient = Patient.find_by_id(params['id'].to_i)
   erb(:"patients/show")
 end

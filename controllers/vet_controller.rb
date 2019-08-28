@@ -20,7 +20,7 @@ post '/vets' do
 end
 
 # show
-get '/vets/:id' do
+get '/vets/:id/show' do
   @vet = Vet.find_by_id(params['id'].to_i)
   @patients = @vet.patients
   erb(:"vets/show")

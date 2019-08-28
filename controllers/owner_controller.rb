@@ -21,7 +21,7 @@ post '/owners' do
 end
 
 # show
-get '/owners/:id' do
+get '/owners/:id/show' do
   @owner = Owner.find_by_id(params['id'].to_i)
   @patients = @owner.patients
   erb(:"owners/show")

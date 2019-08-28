@@ -12,7 +12,9 @@
       <div class="">
         <a href= "/vets/<%= vet.id %>"><%= vet.format_name %> </a>
       </div>
-      <a href= "/vets/<%= vet.id %>">Show Details</a>
+      <form method="get" action="/vets/ <%= vet.id %>/show">
+        <input type="submit" value="Show Details">
+      </form>
     </div>
 </div>
 

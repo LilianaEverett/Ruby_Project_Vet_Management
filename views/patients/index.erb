@@ -1,17 +1,22 @@
-<h2>Patients List</h2>
 
-<nav id="menu">
-  <li class="menu-item"><a href='/patients/new'>Add New</a></li>
-</nav>
+<a class="add-new" href='/patients/new'>Add New</a>
 
-<div class="">
+<div class="list">
+  Patients List
+</div>
+
+<div class="pat-index">
   <% @patients.each do |patient| %>
-    <div class="">
+    <div class="pat-index-each">
       <img src="/images/<%= patient.pic %>"/>
-      <div class="">
-        <a href= "/patients/<%= patient.id %>"><%= patient.name %></a>
+      <div class="text">
+        <h2><%= patient.name %></h2>
       </div>
-      <a href= "/patients/<%= patient.id %>">Show Details</a>
+      <div class="show-details">
+        <form method="get" action="/patients/ <%= patient.id %>/show">
+          <input type="submit" value="Show Details">
+        </form>
+      </div>
     </div>
   <% end %>
 </div>

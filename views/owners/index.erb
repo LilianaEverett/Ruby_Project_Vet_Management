@@ -12,11 +12,14 @@
         <p><%= owner.contact %></p>
       </div>
       <div class="">
-        <a href="/owners/<%= owner.id %>/edit">Edit</a>
-        <form method="post" action="/owners/ <%= owner.id %>/delete">
+        <form method="get" action="/owners/ <%= owner.id %>/edit">
+          <input type="submit" value="Edit">
+        </form>        <form method="post" action="/owners/ <%= owner.id %>/delete">
           <input type="submit" value="Delete">
         </form>
-        <a href="/owners/<%= owner.id %>">Pets</a>
+        <form method="get" action="/owners/ <%= owner.id %>/show">
+          <input type="submit" value="Pets">
+        </form>
       </div>
     </div>
 
