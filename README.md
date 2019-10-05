@@ -2,9 +2,9 @@
 
   This is my first project as a Codeclan student.
   
-  After 4 weeks learning RUBY and the programming basic concepts, POSTGRESQL, SINATRA, a little bit of HTML and CSS, we were avle to create an app in 6 days!
+  After 4 weeks learning RUBY and the programming basic concepts, POSTGRESQL, SINATRA, a little bit of HTML and CSS, we were asked to create an app in 6 days!
   
-  VETMAN is a management application for business like Vet clinics.
+  VETMAN is a management application for business like Vet clinics. Follow this link to see the app (https://vetman.herokuapp.com/)
   
   Functionalities:
   
