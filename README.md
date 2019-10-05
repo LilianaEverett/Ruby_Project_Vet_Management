@@ -30,5 +30,5 @@
   - Add new vets to the data base
   - Remove from the data base
   - Edit personal details
-  - Add a picture
+  - Add a picture (this feature is not finished)
   - See the patients assigned to the vet
