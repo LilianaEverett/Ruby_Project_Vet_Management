@@ -1,6 +1,6 @@
 # Ruby_Project_Vet_Management
 
-  ## This is my first project as a Codeclan student.
+  ### This is my first project as a Codeclan student.
   
   After 4 weeks learning RUBY and the programming basic concepts, POSTGRESQL, SINATRA, a little bit of HTML and CSS, we were asked to create an app in 6 days!
   
